@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index de Productos{% endblock %}
+
+{% block body %}
+    <ul>
+    {% for producto in productos %}
+        <li>
+            <a href="{{ path('producto_show', {'id':  producto.id, 'slug': producto.slug}) }}">{{ producto.nombre }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
